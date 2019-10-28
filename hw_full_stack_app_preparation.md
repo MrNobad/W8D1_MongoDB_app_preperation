@@ -33,13 +33,21 @@ Draw a diagram showing the dataflow through the application starting with a form
 --it handles all the Cross-Origin Resource Sharing?
 
 4. What are the responsibilities of the `gamesRouter`?
+the gamesRouter handles all the CRUD actions to the MongoDB
+
 5. What process does the the client (front-end) use to communicate with the server?
+--???
 6. What optional second argument does the `fetch` method take? And what is it used for in this application? Hint: See [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) on the MDN docs
+--the second argument is an init. It is used to call the method, body and headers from the MongoDB in this application?
+
 7. Which of the games API routes does the front-end application consume (i.e. make requests to)?
+--/:id I think, which is ObjectId
 8. What are we using the [MongoDB Driver](http://mongodb.github.io/node-mongodb-native/) for?
+--To maps to the objects in our application code as they are unstructured, unlike a table.
 
 ## Extension
 
 Why do we need to use [`ObjectId`](https://mongodb.github.io/node-mongodb-native/api-bson-generated/objectid.html) from the MongoDB driver?
+--ObjectId finds the instance specifically so we can work with the objects inside. It also creates instances with specific 24 byte hex strings. Without using ObjectId we could never find anything specific.
 
 Add to your diagram the dataflow for removing a game.
